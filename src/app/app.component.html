@@ -1,3 +1,20 @@
-<h1>
-  {{title}}
-</h1>
+<form class="ui large form segment">
+  <h3 class="ui header">Add a Product</h3>
+ 
+  <div class="field">
+  <label for="title">Name:</label>
+  <input name="title" #newtitle>
+  </div>
+  <div class="field">
+  <label for="link">Price:</label>
+  <input name="link" #newlink>
+  </div>
+  <button (click)="addArticle(newtitle, newlink)"class="ui positive right floated button"> Submit </button>  
+</form>
+
+<div class="ui grid posts">
+  <app-article *ngFor="let a of articles" [article]="a">
+  </app-article>
+  </div>
+
+  
